@@ -1,24 +1,20 @@
 [
   {
-    "title": "Saunagus við fullt tungl",
-    "date": "2026-05-02",
-    "time": "20:00",
-    "location": "Fúsk sána, Reykjavík",
-    "mapUrl": "https://www.google.com/maps/search/?api=1&query=F%C3%BAsk+s%C3%A1na+Reykjav%C3%ADk",
-    "description": "Leiddar gusur undir fullu tungli. Hiti, ilmur, hljóð og hvíld.",
-    "price": "7.500 kr.",
-    "bookingUrl": "https://form.jotform.com/PLACEHOLDER",
-    "image": "img/carousel/02-fusk.jpg"
+    "title": "Sunnudags Sánu Gusa 💧 4 Lotur",
+    "date": "2026-04-26",
+    "time": "11:00 – 12:30",
+    "location": "Reykjavík",
+    "mapUrl": "https://maps.app.goo.gl/qcmkGYtUoFdUgg9H6",
+    "price": "5.000 kr.",
+    "bookingUrl": "https://form.jotform.com/261106347603349"
   },
   {
-    "title": "Morgungusa",
-    "date": "2026-05-10",
-    "time": "08:00",
-    "location": "Fúsk sána, Reykjavík",
-    "mapUrl": "https://www.google.com/maps/search/?api=1&query=F%C3%BAsk+s%C3%A1na+Reykjav%C3%ADk",
-    "description": "Rólegt upphaf dagsins með öndun, hita og kælingu.",
-    "price": "6.500 kr.",
-    "bookingUrl": "https://form.jotform.com/PLACEHOLDER",
-    "image": "img/carousel/03-fusk.jpg"
+    "title": "Sunnudags Sánu Gusa 💧 4 Lotur",
+    "date": "2026-04-26",
+    "time": "13:30 – 15:00",
+    "location": "Reykjavík",
+    "mapUrl": "https://maps.app.goo.gl/qcmkGYtUoFdUgg9H6",
+    "price": "5.000 kr.",
+    "bookingUrl": "https://form.jotform.com/261106893412353"
   }
 ]
