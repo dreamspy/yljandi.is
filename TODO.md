@@ -33,48 +33,51 @@ GitHub Pages reads this file to know which custom domain to serve.
 
 ISNIC's web console is at `https://www.isnic.is/` (log in with the handle used when buying the domain).
 
-For the apex domain `yljandi.is`, add four A records pointing to GitHub Pages:
+A new `.is` domain may be on ISNIC's **parking** nameservers (`parking00/01.isnic.is`), which have no editable zone. Before adding records, go to **Flytja hýsingu** on the domain and pick **DNS Hýsing ISNIC**, then confirm. The nameservers will switch to `forwarding00/01.isnic.is` and the zone editor becomes available. Takes ~10 min.
 
-| Type | Host        | Value             |
-| ---- | ----------- | ----------------- |
-| A    | `yljandi.is` | `185.199.108.153` |
-| A    | `yljandi.is` | `185.199.109.153` |
-| A    | `yljandi.is` | `185.199.110.153` |
-| A    | `yljandi.is` | `185.199.111.153` |
+For the apex domain `yljandi.is`, add four A records. In ISNIC's form, **Heiti (host)** should be `@` (do not type the domain itself: ISNIC warns "Heiti inniheldur yljandi.is"):
+
+| Type | Host | Value             |
+| ---- | ---- | ----------------- |
+| A    | `@`  | `185.199.108.153` |
+| A    | `@`  | `185.199.109.153` |
+| A    | `@`  | `185.199.110.153` |
+| A    | `@`  | `185.199.111.153` |
 
 Optional (recommended) IPv6 records, same host:
 
-| Type | Host         | Value                   |
-| ---- | ------------ | ----------------------- |
-| AAAA | `yljandi.is` | `2606:50c0:8000::153`   |
-| AAAA | `yljandi.is` | `2606:50c0:8001::153`   |
-| AAAA | `yljandi.is` | `2606:50c0:8002::153`   |
-| AAAA | `yljandi.is` | `2606:50c0:8003::153`   |
+| Type | Host | Value                 |
+| ---- | ---- | --------------------- |
+| AAAA | `@`  | `2606:50c0:8000::153` |
+| AAAA | `@`  | `2606:50c0:8001::153` |
+| AAAA | `@`  | `2606:50c0:8002::153` |
+| AAAA | `@`  | `2606:50c0:8003::153` |
 
 For the `www` subdomain, add a CNAME so `www.yljandi.is` also works:
 
-| Type  | Host              | Value                 |
-| ----- | ----------------- | --------------------- |
-| CNAME | `www.yljandi.is`  | `dreamspy.github.io.` |
+| Type  | Host  | Value (Lén)           |
+| ----- | ----- | --------------------- |
+| CNAME | `www` | `dreamspy.github.io.` |
 
-- [ ] Save DNS changes at ISNIC.
-- [ ] Wait for propagation (usually minutes, can take a few hours).
-- [ ] Check from the terminal:
+- [x] Move domain off parking onto DNS Hýsing ISNIC.
+- [x] Save DNS changes at ISNIC.
+- [x] Wait for propagation (usually minutes, can take a few hours).
+- [x] Check from the terminal:
   ```
   dig yljandi.is +short
   dig www.yljandi.is +short
   ```
-  The A records should show the four GitHub IPs above.
+  The A records should show the four GitHub IPs above. If the public resolver is still empty after adding records, query the authoritative server directly: `dig @forwarding00.isnic.is yljandi.is +short`.
 
 ## 5. Verify the custom domain on GitHub
 
-- [ ] Back in **Settings → Pages**, the **Custom domain** field should show `yljandi.is` with a green check ("DNS check successful").
-- [ ] Tick **Enforce HTTPS** once the check passes. GitHub issues a Let's Encrypt certificate automatically; this can take up to an hour after DNS is correct.
+- [x] Back in **Settings → Pages**, the **Custom domain** field should show `yljandi.is` with a green check ("DNS check successful").
+- [x] Tick **Enforce HTTPS** once the check passes. GitHub issues a Let's Encrypt certificate automatically; this can take up to an hour after DNS is correct. Immediately after DNS passes, the checkbox is disabled with the message *"Unavailable for your site because a certificate has not yet been issued for your domain"*. That's expected: just wait and refresh the page.
 
 ## 6. Smoke test
 
-- [ ] Visit `https://yljandi.is` in a fresh browser window.
-- [ ] Visit `https://www.yljandi.is` and confirm it redirects to `https://yljandi.is`.
+- [x] Visit `https://yljandi.is` in a fresh browser window.
+- [x] Visit `https://www.yljandi.is` and confirm it redirects to `https://yljandi.is`.
 - [ ] Click through nav and confirm event data loads.
 - [ ] Check on mobile.
 
