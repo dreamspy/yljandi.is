@@ -114,62 +114,6 @@ a { color: inherit; }
   color: var(--bg);
 }
 
-/* ---------- Carousel ---------- */
-.carousel {
-  position: relative;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-.carousel__track {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-radius: 2px;
-  background: var(--bg-soft);
-}
-
-.carousel__slide {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  opacity: 0;
-  transition: opacity 1200ms ease;
-  pointer-events: none;
-}
-
-.carousel__slide.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.carousel__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carousel__dots {
-  display: flex;
-  gap: 0.65rem;
-  justify-content: center;
-  margin-top: 1.25rem;
-}
-
-.carousel__dot {
-  width: 8px;
-  height: 8px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: var(--line);
-  cursor: pointer;
-  transition: background 240ms ease, transform 240ms ease;
-}
-.carousel__dot:hover { transform: scale(1.2); }
-.carousel__dot.is-active { background: var(--ink); }
-
 /* ---------- Events ---------- */
 .events {
   max-width: var(--max);

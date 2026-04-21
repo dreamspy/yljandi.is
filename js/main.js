@@ -1,47 +1,6 @@
 (() => {
   "use strict";
 
-  // ---------- Carousel ----------
-  const track = document.getElementById("carousel-track");
-  const dotsEl = document.getElementById("carousel-dots");
-
-  if (track && dotsEl) {
-    const slides = Array.from(track.querySelectorAll(".carousel__slide"));
-    let current = 0;
-    let timer = null;
-    const INTERVAL = 5500;
-
-    slides.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.className = "carousel__dot";
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", `Mynd ${i + 1}`);
-      if (i === 0) dot.classList.add("is-active");
-      dot.addEventListener("click", () => go(i, true));
-      dotsEl.appendChild(dot);
-    });
-
-    const dots = Array.from(dotsEl.children);
-
-    function go(next, manual) {
-      slides[current].classList.remove("is-active");
-      dots[current].classList.remove("is-active");
-      current = (next + slides.length) % slides.length;
-      slides[current].classList.add("is-active");
-      dots[current].classList.add("is-active");
-      if (manual) restart();
-    }
-
-    function tick() { go(current + 1, false); }
-    function start() { timer = setInterval(tick, INTERVAL); }
-    function stop()  { clearInterval(timer); }
-    function restart() { stop(); start(); }
-
-    track.addEventListener("mouseenter", stop);
-    track.addEventListener("mouseleave", start);
-    start();
-  }
-
   // ---------- Events ----------
   const listEl = document.getElementById("events-list");
 
