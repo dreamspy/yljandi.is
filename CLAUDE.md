@@ -2,7 +2,14 @@
 
 ## Project
 
-Static marketing page for Yljandi Sána, a sauna business in Iceland. Hosted on GitHub Pages at the custom domain `yljandi.is`.
+Static marketing page for Yljandi Sána, a sauna business in Iceland.
+
+Deployment:
+
+- Repo: `github.com/dreamspy/yljandi.is`, default branch `main`.
+- Host: GitHub Pages, served from `/ (root)` on `main`. Pushing to `main` triggers a rebuild; no CI step.
+- Custom domain: `yljandi.is`. The `CNAME` file at the repo root binds it.
+- DNS: hosted at ISNIC via "DNS Hýsing ISNIC" (nameservers `forwarding00/01.isnic.is`). Four A records on the apex point at GitHub Pages (`185.199.108-111.153`), and `www` is a CNAME to `dreamspy.github.io.`. In the ISNIC zone editor, the apex host is entered as `@` (not the full domain).
 
 ## Stack
 

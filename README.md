@@ -29,8 +29,7 @@ Edit `data/events.json`. Each event is an object in the top-level array:
   "mapUrl": "https://www.google.com/maps/...",
   "description": "Leiddar gusur undir fullu tungli.",
   "price": "7.500 kr.",
-  "bookingUrl": "https://form.jotform.com/...",
-  "image": "img/carousel/02-fusk.jpg"
+  "bookingUrl": "https://form.jotform.com/..."
 }
 ```
 
@@ -51,7 +50,9 @@ Open http://localhost:8000. The page uses `fetch`, which does not work when open
 ## Deploy (GitHub Pages)
 
 1. Repo → Settings → Pages → Source: `main` branch, `/ (root)` folder.
-2. For the custom domain `yljandi.is`, add a file named `CNAME` at the repo root containing `yljandi.is`, then configure DNS at the registrar (A records to GitHub Pages IPs, or a CNAME record to `dreamspy.github.io`).
+2. For the custom domain `yljandi.is`:
+   - A file named `CNAME` at the repo root contains `yljandi.is`.
+   - DNS is configured at ISNIC: four A records on the apex pointing to GitHub Pages (`185.199.108-111.153`) plus a CNAME on `www` pointing to `dreamspy.github.io.`. Apex domains cannot use a CNAME, so A records are required for `yljandi.is` itself.
 
 ## License
 
