@@ -26,6 +26,7 @@ Edit `data/events.json`. Each event is an object in the top-level array:
   "date": "2026-05-02",
   "time": "20:00",
   "location": "Fúsk sána, Reykjavík",
+  "mapUrl": "https://www.google.com/maps/...",
   "description": "Leiddar gusur undir fullu tungli.",
   "price": "7.500 kr.",
   "bookingUrl": "https://form.jotform.com/...",

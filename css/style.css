@@ -37,7 +37,7 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  padding: clamp(3rem, 8vw, 6rem) var(--pad) clamp(2rem, 5vw, 4rem);
+  padding: clamp(3rem, 8vw, 6rem) var(--pad) 0;
   max-width: var(--max);
   margin: 0 auto;
 }
@@ -45,6 +45,13 @@ a { color: inherit; }
 .hero__logo {
   width: clamp(12rem, 28vw, 22rem);
   margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
+  animation: breathe 9s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.018); }
 }
 
 .hero__name {
@@ -68,15 +75,8 @@ a { color: inherit; }
   color: var(--ink-soft);
   font-style: italic;
   max-width: 38rem;
-  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  margin: 0 auto;
   line-height: 1.5;
-}
-
-.hero__cta {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 /* ---------- Buttons ---------- */
@@ -114,11 +114,62 @@ a { color: inherit; }
   color: var(--bg);
 }
 
+/* ---------- Brushstroke divider ---------- */
+.brushstroke {
+  display: block;
+  width: clamp(9rem, 22vw, 14rem);
+  height: auto;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  opacity: 0.45;
+  overflow: visible;
+}
+
+/* ---------- Ritual ---------- */
+.ritual {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--pad);
+  text-align: center;
+}
+
+.ritual .brushstroke {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.ritual__words {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  line-height: 2.2;
+}
+
+.ritual__words span {
+  display: inline-block;
+  margin: 0 0.45em;
+}
+
+.ritual__words .ritual__dot {
+  color: var(--line);
+}
+
+.ritual__pair {
+  margin: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .ritual__dot--between { display: none; }
+}
+
 /* ---------- Events ---------- */
 .events {
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(4rem, 10vw, 7rem) var(--pad) clamp(3rem, 6vw, 5rem);
+  padding: clamp(2rem, 4vw, 3rem) var(--pad) clamp(3rem, 6vw, 5rem);
   text-align: center;
 }
 
@@ -191,6 +242,24 @@ a { color: inherit; }
   letter-spacing: 0.04em;
 }
 
+.event__map {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  vertical-align: -0.2em;
+  transition: color 240ms ease;
+}
+
+.event__map:hover { color: var(--accent); }
+
+.event__map-icon {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
 .event__desc {
   margin: 0;
   color: var(--ink);
@@ -232,6 +301,6 @@ a { color: inherit; }
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .carousel__slide { transition: none; }
+  .hero__logo { animation: none; }
   .btn:hover { transform: none; }
 }

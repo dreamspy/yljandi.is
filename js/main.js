@@ -30,7 +30,16 @@
       return;
     }
 
-    listEl.innerHTML = upcoming.map(e => `
+    const mapPinSvg = `<svg class="event__map-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-6.5-6-6.5-11.5a6.5 6.5 0 1 1 13 0C18.5 16 12 22 12 22z"/><circle cx="12" cy="10.5" r="2.2"/></svg>`;
+
+    listEl.innerHTML = upcoming.map(e => {
+      const locationHtml = e.location
+        ? `${escapeHtml(e.location)}${e.mapUrl ? ` <a class="event__map" href="${encodeURI(e.mapUrl)}" target="_blank" rel="noopener" aria-label="Opna á korti" title="Opna á korti">${mapPinSvg}</a>` : ""}`
+        : "";
+      const priceHtml = e.price ? escapeHtml(e.price) : "";
+      const metaInner = [locationHtml, priceHtml].filter(Boolean).join(" · ");
+
+      return `
       <article class="event">
         <div class="event__when">
           ${formatDate(e.date)}
@@ -38,16 +47,15 @@
         </div>
         <div class="event__body">
           <h3>${escapeHtml(e.title)}</h3>
-          <p class="event__meta">
-            ${[e.location, e.price].filter(Boolean).map(escapeHtml).join(" · ")}
-          </p>
+          <p class="event__meta">${metaInner}</p>
           ${e.description ? `<p class="event__desc">${escapeHtml(e.description)}</p>` : ""}
         </div>
         <div class="event__cta">
           <a class="btn btn--primary" href="${encodeURI(e.bookingUrl || "#")}" target="_blank" rel="noopener">Bóka</a>
         </div>
       </article>
-    `).join("");
+    `;
+    }).join("");
   }
 
   function escapeHtml(str) {
