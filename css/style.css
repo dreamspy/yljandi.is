@@ -119,50 +119,10 @@ a { color: inherit; }
   display: block;
   width: clamp(9rem, 22vw, 14rem);
   height: auto;
-  margin: 0 auto;
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
   color: var(--ink-soft);
   opacity: 0.45;
   overflow: visible;
-}
-
-/* ---------- Ritual ---------- */
-.ritual {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: clamp(1.75rem, 3.5vw, 2.5rem) var(--pad);
-  text-align: center;
-}
-
-.ritual .brushstroke {
-  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
-}
-
-.ritual__words {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  color: var(--ink);
-  line-height: 2.2;
-}
-
-.ritual__words span {
-  display: inline-block;
-  margin: 0 0.45em;
-}
-
-.ritual__words .ritual__dot {
-  color: var(--line);
-}
-
-.ritual__pair {
-  margin: 0;
-  white-space: nowrap;
-}
-
-@media (max-width: 40rem) {
-  .ritual__dot--between { display: none; }
 }
 
 /* ---------- Events ---------- */
