@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yljandi - Sána</title>
+  <meta name="description" content="Leiddar sánu gusur (saunagus) sem sameina hita, nærveru, slökun og endurnæringu.">
+
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main>
+    <header class="hero">
+      <img class="hero__logo" src="img/logo.png" alt="Yljandi merki">
+      <h1 class="hero__name">Yljandi <span class="hero__sep">·</span> Sána</h1>
+      <p class="hero__tagline">Leiddar sánu gusur (saunagus) sem sameina hita, nærveru, slökun og endurnæringu.</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#vidburdir">Bóka gusu</a>
+        <a class="btn btn--secondary" href="https://facebook.com/yljandi" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </header>
+
+    <section class="carousel" aria-label="Myndir">
+      <div class="carousel__track" id="carousel-track">
+        <figure class="carousel__slide is-active">
+          <img src="img/carousel/01-birch-and-bucket.jpg" alt="Birki og fata" loading="lazy">
+        </figure>
+        <figure class="carousel__slide">
+          <img src="img/carousel/02-fusk.jpg" alt="Fúsk sána" loading="lazy">
+        </figure>
+        <figure class="carousel__slide">
+          <img src="img/carousel/03-fusk.jpg" alt="Fúsk sána" loading="lazy">
+        </figure>
+        <figure class="carousel__slide">
+          <img src="img/carousel/04-fusk.jpg" alt="Fúsk sána" loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="Myndaskipti"></div>
+    </section>
+
+    <section id="vidburdir" class="events">
+      <h2 class="events__title">Komandi viðburðir</h2>
+      <div class="events__list" id="events-list">
+        <p class="events__loading">Hleð viðburðum …</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__link" href="https://facebook.com/yljandi" target="_blank" rel="noopener">facebook.com/yljandi</a>
+    <p class="footer__note">Yljandi · Sána</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Saunagus við fullt tungl",
+    "date": "2026-05-02",
+    "time": "20:00",
+    "location": "Fúsk sána, Reykjavík",
+    "description": "Leiddar gusur undir fullu tungli. Hiti, ilmur, hljóð og hvíld.",
+    "price": "7.500 kr.",
+    "bookingUrl": "https://form.jotform.com/PLACEHOLDER",
+    "image": "img/carousel/02-fusk.jpg"
+  },
+  {
+    "title": "Morgungusa",
+    "date": "2026-05-10",
+    "time": "08:00",
+    "location": "Fúsk sána, Reykjavík",
+    "description": "Rólegt upphaf dagsins með öndun, hita og kælingu.",
+    "price": "6.500 kr.",
+    "bookingUrl": "https://form.jotform.com/PLACEHOLDER",
+    "image": "img/carousel/03-fusk.jpg"
+  }
+]
