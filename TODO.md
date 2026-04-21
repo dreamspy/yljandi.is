@@ -4,30 +4,30 @@ Plan for getting the site live at `https://yljandi.is`. The repo is already on G
 
 ## 1. Push the current state
 
-- [ ] Review uncommitted changes (`git status`, `git diff`).
-- [ ] Commit anything intended for the first live version.
-- [ ] `git push origin main`.
+- [x] Review uncommitted changes (`git status`, `git diff`).[[]()]()
+- [x] Commit anything intended for the first live version.
+- [x] `git push origin main`.
 
 Note: `2.png` and `469983820_...jpg` at the repo root are untracked on purpose. Leave them out.
 
 ## 2. Enable GitHub Pages
 
-- [ ] GitHub → repo `dreamspy/yljandi.is` → **Settings** → **Pages**.
-- [ ] Under **Build and deployment**:
+- [x] GitHub → repo `dreamspy/yljandi.is` → **Settings** → **Pages**.
+- [x] Under **Build and deployment**:
   - **Source**: Deploy from a branch
   - **Branch**: `main`, folder `/ (root)`
-- [ ] Save. Wait for the first build (takes up to a minute).
+- [x] Save. Wait for the first build (takes up to a minute).
 - [ ] Confirm the site is reachable at `https://dreamspy.github.io/yljandi.is/` before moving on.
 
 ## 3. Add the CNAME file
 
 GitHub Pages reads this file to know which custom domain to serve.
 
-- [ ] Create a file named `CNAME` at the repo root (no extension) containing exactly:
+- [x] Create a file named `CNAME` at the repo root (no extension) containing exactly:
   ```
   yljandi.is
   ```
-- [ ] Commit and push. GitHub Pages will set the custom domain automatically.
+- [x] Commit and push. GitHub Pages will set the custom domain automatically.
 
 ## 4. Configure DNS at ISNIC
 
