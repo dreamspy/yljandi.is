@@ -114,31 +114,12 @@ a { color: inherit; }
   color: var(--bg);
 }
 
-/* ---------- Brushstroke divider ---------- */
-.brushstroke {
-  display: block;
-  width: clamp(9rem, 22vw, 14rem);
-  height: auto;
-  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
-  color: var(--ink-soft);
-  opacity: 0.45;
-  overflow: visible;
-}
-
 /* ---------- Events ---------- */
 .events {
   max-width: var(--max);
   margin: 0 auto;
-  padding: clamp(2rem, 4vw, 3rem) var(--pad) clamp(3rem, 6vw, 5rem);
+  padding: clamp(3rem, 6vw, 5rem) var(--pad);
   text-align: center;
-}
-
-.events__title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  letter-spacing: 0.05em;
-  margin: 0 0 clamp(2rem, 5vw, 3.5rem);
 }
 
 .events__list {
