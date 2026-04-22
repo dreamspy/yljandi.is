@@ -110,15 +110,16 @@ Privacy-friendly, no cookies, free, no consent banner needed.
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_TOKEN"}'></script>
   ```
 - [x] Commit, push, wait a minute for GitHub Pages to rebuild.
-- [ ] Visit `https://yljandi.is` from a phone or incognito window to generate a pageview. Check the Web Analytics dashboard after ~5 minutes: pageviews, visits, top paths, referrers, and country breakdown should appear.
+- [x] Visit `https://yljandi.is` from a phone or incognito window to generate a pageview. Check the Web Analytics dashboard after ~5 minutes: pageviews, visits, top paths, referrers, and country breakdown should appear.
+- [x] check in cloudflare analytics
 
 ## 2. Google Search Console (needed anyway for SEO, gives search-side metrics)
 
 Search Console is not a visitor counter, but it tells you how many impressions and clicks the site gets from Google, and which queries bring people in. Set it up as part of analytics.
 
-- [ ] Go to `https://search.google.com/search-console` and add `yljandi.is` as a **Domain property** (not URL-prefix: domain property covers `https`, `http`, `www`, and subdomains).
-- [ ] Verify via DNS TXT record. Add the TXT record at whichever DNS provider is currently authoritative (Cloudflare if nameservers were moved, otherwise ISNIC). Host `@`, value is the `google-site-verification=...` string Google provides.
-- [ ] Wait a few minutes, click **Verify**. Verification is checked again periodically, so do not delete the TXT record.
+- [x] Go to `https://search.google.com/search-console` and add `yljandi.is` as a **Domain property** (not URL-prefix: domain property covers `https`, `http`, `www`, and subdomains).
+- [x] Verify via DNS TXT record. Add the TXT record at whichever DNS provider is currently authoritative (Cloudflare if nameservers were moved, otherwise ISNIC). Host `@`, value is the `google-site-verification=...` string Google provides.
+- [x] Wait a few minutes, click **Verify**. Verification is checked again periodically, so do not delete the TXT record.
 
 ## 3. Optional: Google Analytics 4
 
