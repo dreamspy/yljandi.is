@@ -54,6 +54,16 @@
       margin-bottom: 10px;
     }
 
+    .link-description {
+      word-break: break-all;
+      font-size: 13px;
+      background: #eee7dc;
+      color: #5c5145;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
     button {
       width: 100%;
       border: none;
@@ -99,11 +109,13 @@
     const links = [
       {
         title: "Yljandi tickets, clean link",
-        url: "https://yljandi.is/tickets"
+        url: "https://yljandi.is/tickets",
+        description: "Redirects to: https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=get_tickets_button"
       },
       {
         title: "Yljandi Facebook page, clean link",
-        url: "https://yljandi.is/facebook"
+        url: "https://yljandi.is/facebook",
+        description: "Redirects to: https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=page_website"
       },
       {
         title: "Instagram story",
@@ -127,11 +139,13 @@
       },
       {
         title: "Facebook Get tickets button, clean link",
-        url: "https://yljandi.is/tickets"
+        url: "https://yljandi.is/tickets",
+        description: "Redirects to: https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=get_tickets_button"
       },
       {
         title: "Facebook page website, clean link",
-        url: "https://yljandi.is/facebook"
+        url: "https://yljandi.is/facebook",
+        description: "Redirects to: https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=page_website"
       },
       {
         title: "Facebook post",
@@ -222,6 +236,14 @@
 
       card.appendChild(title);
       card.appendChild(url);
+
+      if (item.description) {
+        const description = document.createElement("div");
+        description.className = "link-description";
+        description.textContent = item.description;
+        card.appendChild(description);
+      }
+
       card.appendChild(button);
 
       container.appendChild(card);
