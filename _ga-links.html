@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yljandi GA Links</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f2ea;
+      color: #1f1a14;
+      margin: 0;
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      color: #5c5145;
+    }
+
+    .link-card {
+      background: #ffffff;
+      border: 1px solid #e5ded2;
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .link-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .link-url {
+      word-break: break-all;
+      font-size: 14px;
+      background: #f4efe7;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      background: #1f1a14;
+      color: white;
+    }
+
+    button:active {
+      transform: scale(0.99);
+    }
+
+    .copied {
+      background: #2f7d4f !important;
+    }
+
+    .note {
+      margin-top: 28px;
+      font-size: 14px;
+      color: #6b6054;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Yljandi tracking links</h1>
+    <p>Tap a button to copy the correct link for posting.</p>
+
+    <div id="links"></div>
+
+    <p class="note">
+      These links all go to yljandi.is with Google Analytics UTM tracking.
+      Use them instead of the plain yljandi.is link when posting.
+    </p>
+  </div>
+
+  <script>
+    const links = [
+      {
+        title: "Instagram bio",
+        url: "https://yljandi.is/?utm_source=instagram&utm_medium=social&utm_campaign=bio_link"
+      },
+      {
+        title: "Instagram story",
+        url: "https://yljandi.is/?utm_source=instagram&utm_medium=social&utm_campaign=story"
+      },
+      {
+        title: "Instagram post",
+        url: "https://yljandi.is/?utm_source=instagram&utm_medium=social&utm_campaign=post"
+      },
+      {
+        title: "Instagram reel",
+        url: "https://yljandi.is/?utm_source=instagram&utm_medium=social&utm_campaign=reel"
+      },
+      {
+        title: "Facebook page button",
+        url: "https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=page_button"
+      },
+      {
+        title: "Facebook post",
+        url: "https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=post"
+      },
+      {
+        title: "Facebook event",
+        url: "https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=event"
+      },
+      {
+        title: "Facebook story",
+        url: "https://yljandi.is/?utm_source=facebook&utm_medium=social&utm_campaign=story"
+      },
+      {
+        title: "Facebook group post",
+        url: "https://yljandi.is/?utm_source=facebook_group&utm_medium=social&utm_campaign=post"
+      },
+      {
+        title: "Messenger / SMS / WhatsApp",
+        url: "https://yljandi.is/?utm_source=direct_message&utm_medium=message&utm_campaign=yljandi"
+      },
+      {
+        title: "Poster or flyer QR code",
+        url: "https://yljandi.is/?utm_source=poster&utm_medium=print&utm_campaign=yljandi"
+      },
+      {
+        title: "Business card QR code",
+        url: "https://yljandi.is/?utm_source=business_card&utm_medium=print&utm_campaign=yljandi"
+      },
+      {
+        title: "QR code at sauna/event location",
+        url: "https://yljandi.is/?utm_source=event_qr&utm_medium=offline&utm_campaign=yljandi"
+      },
+      {
+        title: "Newsletter",
+        url: "https://yljandi.is/?utm_source=newsletter&utm_medium=email&utm_campaign=yljandi"
+      },
+      {
+        title: "Email signature",
+        url: "https://yljandi.is/?utm_source=email_signature&utm_medium=email&utm_campaign=yljandi"
+      }
+    ];
+
+    const container = document.getElementById("links");
+
+    links.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "link-card";
+
+      const title = document.createElement("div");
+      title.className = "link-title";
+      title.textContent = item.title;
+
+      const url = document.createElement("div");
+      url.className = "link-url";
+      url.textContent = item.url;
+
+      const button = document.createElement("button");
+      button.textContent = "Copy link";
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(item.url);
+          button.textContent = "Copied!";
+          button.classList.add("copied");
+
+          setTimeout(() => {
+            button.textContent = "Copy link";
+            button.classList.remove("copied");
+          }, 1500);
+        } catch (err) {
+          const textArea = document.createElement("textarea");
+          textArea.value = item.url;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textArea);
+
+          button.textContent = "Copied!";
+          button.classList.add("copied");
+
+          setTimeout(() => {
+            button.textContent = "Copy link";
+            button.classList.remove("copied");
+          }, 1500);
+        }
+      });
+
+      card.appendChild(title);
+      card.appendChild(url);
+      card.appendChild(button);
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
